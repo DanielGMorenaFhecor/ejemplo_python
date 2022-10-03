@@ -4,7 +4,7 @@ from structural_standards.aashto.aashto import Aashto
 # La clase AASHTO CONCRETE es hija de CONCRETE
 class AashtoConcrete(Concrete):
 
-    def __init__(self, name: str, fc):
+    def __init__(self, name: str, fc: float):
         super().__init__(name)
         self.fc = fc
         self.aashto = Aashto()

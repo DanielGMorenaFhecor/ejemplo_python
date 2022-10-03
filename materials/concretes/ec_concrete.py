@@ -5,7 +5,7 @@ from structural_standards.eurocodes.eurocode import Eurocode
 class EcConcrete(Concrete):
     
     # Podemos tener parámetros en el constructor de ECCONCRETE adicionales a los de CONCRETE
-    def __init__(self, name: str, fck):
+    def __init__(self, name: str, fck: float):
         super().__init__(name)
         self.eurocode = Eurocode()
         self.fck = fck

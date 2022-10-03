@@ -1,5 +1,10 @@
 #LA CLASE PRINCIPAL de la AASHTO
-class Aashto():
+from structural_standards.structural_standard import StructuralStandard
+
+class Aashto(StructuralStandard):
+
+    def __init__(self):
+        super().__init__(name='AASHTO')
 
     def Ec(self, density: float, fc: float) -> float:
-        return (density*100)**1.5 * 0.0045 * fc**0.5
+        return density**1.5 * 0.043 * fc**0.5

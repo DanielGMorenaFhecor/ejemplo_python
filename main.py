@@ -26,8 +26,7 @@ print(f'Resistencia={aashto_concrete.strength()} MPa') # Implementación genéri
 print('---------------------')
 
 # La clase CONCRETE FACTORY nos permite crear hormigones independientemente de sus parámetros para definirlos
-# Preguntamos al usuario si quiere un hormigón del EC o de la AASHTO
-print('Selecciona el tipo de hormigón:')
+print('Selecciona el tipo de hormigón:') # Preguntamos al usuario si quiere un hormigón del EC o de la AASHTO
 concrete_type = input('[EC] o [AASHTO]: ')
 
 # Creamos una instancia de la clase que únicamente se dedica a generar hormigones de diferentes normativas con sus parámetros respectivos
@@ -37,7 +36,7 @@ concrete = concrete_factory.create_concrete(concrete_type, strength)
 
 print('--HORMIGÓN DEFNIDO POR EL USUARIO--')
 print(f'Módulo elástico={concrete.elastic_mod()} MPa') # Implementación genérica para TODOS los hormigones
-print(f'Resistencia={concrete.strength()} MPa')
+print(f'Resistencia={concrete.strength()} MPa') # Implementación genérica para TODOS los hormigones
 print('---------------------')
 
 print('--FIN DEL PROGRAMA--')

@@ -10,9 +10,9 @@ class Concrete(Material):
         super().__init__(name,density=2400) # Density=2400kg/m3
 
     @abstractmethod
-    def elastic_mod(self) -> float:
+    def Ecm(self) -> float:
         pass
 
     @abstractmethod
-    def strength(self) -> float:
+    def fck(self) -> float:
         pass

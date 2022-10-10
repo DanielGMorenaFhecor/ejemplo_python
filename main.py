@@ -12,17 +12,17 @@ print('-----------------------')
 print('--HORMIGÓN EUROCÓDIGO--')
 ec_concrete=EcConcrete('C30',fck=30)
 print(f'Ecm={ec_concrete.Ecm()} MPa') # Implementación concreta para HORMIGÓN EUROCÓDIGO
-print(f'Módulo elástico={ec_concrete.elastic_mod()} MPa') # Implementación genérica para TODOS los hormigones
+print(f'Módulo elástico={ec_concrete.Ecm()} MPa') # Implementación genérica para TODOS los hormigones
 print(f'fck={ec_concrete.fck} MPa') # Implementación concreta para HORMIGÓN EUROCÓDIGO
-print(f'Resistencia={ec_concrete.strength()} MPa') # Implementación genérica para TODOS los hormigones
+print(f'Resistencia={ec_concrete.fck()} MPa') # Implementación genérica para TODOS los hormigones
 print('---------------------')
 
 print('--HORMIGÓN AASHTO--')
 aashto_concrete=AashtoConcrete('C30',fc=30)
 print(f'Ec={aashto_concrete.Ec()} MPa') # Implementación concreta para HORMIGÓN AASHTO
-print(f'Módulo elástico={aashto_concrete.elastic_mod()} MPa') # Implementación genérica para TODOS los hormigones
+print(f'Módulo elástico={aashto_concrete.Ecm()} MPa') # Implementación genérica para TODOS los hormigones
 print(f'fc={aashto_concrete.fc} MPa') # Implementación concreta para HORMIGÓN AASHTO
-print(f'Resistencia={aashto_concrete.strength()} MPa') # Implementación genérica para TODOS los hormigones
+print(f'Resistencia={aashto_concrete.fck()} MPa') # Implementación genérica para TODOS los hormigones
 print('---------------------')
 
 # La clase CONCRETE FACTORY nos permite crear hormigones independientemente de sus parámetros para definirlos
@@ -35,8 +35,8 @@ concrete_factory = ConcreteFactory()
 concrete = concrete_factory.create_concrete(concrete_type, strength)
 
 print('--HORMIGÓN DEFNIDO POR EL USUARIO--')
-print(f'Módulo elástico={concrete.elastic_mod()} MPa') # Implementación genérica para TODOS los hormigones
-print(f'Resistencia={concrete.strength()} MPa') # Implementación genérica para TODOS los hormigones
+print(f'Módulo elástico={concrete.Ecm()} MPa') # Implementación genérica para TODOS los hormigones
+print(f'Resistencia={concrete.fck()} MPa') # Implementación genérica para TODOS los hormigones
 print('---------------------')
 
 print('--FIN DEL PROGRAMA--')

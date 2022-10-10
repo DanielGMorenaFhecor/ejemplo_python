@@ -8,15 +8,12 @@ class EcConcrete(Concrete):
     def __init__(self, name: str, fck: float):
         super().__init__(name)
         self.eurocode = Eurocode()
-        self.fck = fck
-
-    def elastic_mod(self) -> float:
-        return self.Ecm()
+        self._fck = fck
 
     def Ecm(self):
         return self.eurocode.Ecm(self.fck)
 
-    def strength(self) -> float:
-        return self.fck
+    def fck(self) -> float:
+        return self._fck
 
     

@@ -9,11 +9,11 @@ class AashtoConcrete(Concrete):
         self.fc = fc
         self.aashto = Aashto()
 
-    def elastic_mod(self) -> float:
+    def Ecm(self) -> float:
         return self.Ec()
 
     def Ec(self) -> float:
         return self.aashto.Ec(self.density, self.fc)
 
-    def strength(self) -> float:
+    def fck(self) -> float:
         return self.fc

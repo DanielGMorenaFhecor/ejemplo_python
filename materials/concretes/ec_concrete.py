@@ -1,5 +1,5 @@
 from materials.concretes.concrete import Concrete
-from structural_standards.eurocodes.concrete.eurocode import Eurocode_1992_2
+from structural_standards.concrete.eurocode import Eurocode_1992_2
 
 # La clase EUROCODE CONCRETE es hija de CONCRETE
 class EcConcrete(Concrete):

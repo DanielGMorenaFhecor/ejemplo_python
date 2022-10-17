@@ -165,7 +165,7 @@ class Eurocode_1992_2(StructuralStandard):
             raise ValueError(f'fcm_t cannot be lower than 0. Current: {fcm_t}')
         elif fcm < 0:
             raise ValueError(f'fcm cannot be lower than 0. Current: {fcm}')
-        elif Ecm:
+        elif Ecm < 0:
             raise ValueError(f'Ecm cannot be lower than 0. Current: {Ecm}')
 
         return (fcm_t / fcm)**0.3 * Ecm

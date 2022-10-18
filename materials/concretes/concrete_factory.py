@@ -1,4 +1,4 @@
-from materials.concretes.aashto_concrete import AashtoConcrete
+from materials.concretes.aashto_concrete import AciConcrete
 from materials.concretes.concrete import Concrete
 from materials.concretes.ec_concrete import EcConcrete
 
@@ -9,6 +9,6 @@ class ConcreteFactory():
         if norm_name.lower()=='ec':
             return EcConcrete(f'C{int(strength)}', fck=strength)
         elif norm_name.lower()=='aashto':
-            return AashtoConcrete(f'C{int(strength)}', fc=strength)
+            return AciConcrete(f'C{int(strength)}', fc=strength)
         else:
             raise ValueError(f'No existe la norma: {norm_name}')

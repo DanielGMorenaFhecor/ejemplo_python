@@ -23,13 +23,11 @@ class Concrete(Material):
 
         super().__init__(name,density)
 
-    @property
     @abstractmethod
     def fck(self) -> float:
         """Returns the concrete compressive strength in MPa"""
 
 
-    @property
     @abstractmethod
     def Ecm(self) -> float:
         """Returns the concrete modulus of elasticity in MPa"""

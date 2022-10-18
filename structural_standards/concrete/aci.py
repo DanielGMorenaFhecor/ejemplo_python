@@ -2,9 +2,7 @@ import numpy as np
 from structural_standards.structural_standard import StructuralStandard
 
 class Aci_318_19(StructuralStandard):
-    """
-    ACI Standard: Building Code Requirements for Structural Concrete
-    """
+    """ACI Standard: Building Code Requirements for Structural Concrete"""
 
     def __init__(self):
         """Creates an instance of ACI 318-19"""

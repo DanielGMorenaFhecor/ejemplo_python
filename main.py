@@ -1,4 +1,4 @@
-from materials.concretes.aashto_concrete import AashtoConcrete
+from materials.concretes.aci_concrete import AciConcrete
 from materials.concretes.concrete_factory import ConcreteFactory
 from materials.concretes.ec_concrete import EcConcrete
 
@@ -18,7 +18,7 @@ print(f'Resistencia={ec_concrete.fck()} MPa') # Implementación genérica para T
 print('---------------------')
 
 print('--HORMIGÓN AASHTO--')
-aashto_concrete=AashtoConcrete('C30',fc=30)
+aashto_concrete=AciConcrete('C30',fc=30)
 print(f'Ec={aashto_concrete.Ec()} MPa') # Implementación concreta para HORMIGÓN AASHTO
 print(f'Módulo elástico={aashto_concrete.Ecm()} MPa') # Implementación genérica para TODOS los hormigones
 print(f'fc={aashto_concrete.fc} MPa') # Implementación concreta para HORMIGÓN AASHTO

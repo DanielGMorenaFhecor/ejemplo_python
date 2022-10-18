@@ -25,7 +25,3 @@ class TestEurocodeConcrete(unittest.TestCase):
         self.assertEqual(self.eurocode.beta_cc(t=28,s=0.35), 1)
         self.assertEqual(self.eurocode.beta_cc(t=14,s=0.35), 0.8650441379410829)
         self.assertEqual(self.eurocode.beta_cc(t=5,s=0.20), 0.7608748550686041)
-
-
-if __name__ == '__main__':
-    unittest.main()

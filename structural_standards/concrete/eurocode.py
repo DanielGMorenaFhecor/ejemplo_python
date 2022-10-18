@@ -2,16 +2,7 @@ import numpy as np
 from structural_standards.structural_standard import StructuralStandard
 
 class Eurocode_1992_2(StructuralStandard):
-    """
-    Eurocode 2: Design of concrete structures. Release date: 2013
-
-    Attributes
-    ----------
-    name : str
-        name of the current structural code
-    release_year : int
-        the year the structural code was released
-    """
+    """Eurocode 2: Design of concrete structures. Release date: 2013"""
 
     @staticmethod
     def __get_valid_national_codes() -> tuple:
@@ -22,6 +13,8 @@ class Eurocode_1992_2(StructuralStandard):
 
     def __init__(self, national_code=''):
         """
+        Creates an instance of EN 1992
+
         Parameters
         ----------
         national_code : str, optional
@@ -32,7 +25,7 @@ class Eurocode_1992_2(StructuralStandard):
         ValueError
             if input national code value is not valid or does not exist
         """
-        super().__init__(name='EN 1992-2', release_year=2013)
+        super().__init__(name='EN 1992-2', release_year=2013, materials=('Concrete'))
 
         valid_national_codes = Eurocode_1992_2.__get_valid_national_codes()
         if national_code not in valid_national_codes:
@@ -40,7 +33,7 @@ class Eurocode_1992_2(StructuralStandard):
 
         self.national_code = national_code
 
-# Part 1-1 General rules and rules for buildings
+# Chapter 1-1: General rules and rules for buildings
 
 # Section 3: Materials
 
@@ -163,9 +156,9 @@ class Eurocode_1992_2(StructuralStandard):
 
         if fcm_t < 0:
             raise ValueError(f'fcm_t cannot be lower than 0. Current: {fcm_t}')
-        elif fcm < 0:
+        if fcm < 0:
             raise ValueError(f'fcm cannot be lower than 0. Current: {fcm}')
-        elif Ecm < 0:
+        if Ecm < 0:
             raise ValueError(f'Ecm cannot be lower than 0. Current: {Ecm}')
 
         return (fcm_t / fcm)**0.3 * Ecm

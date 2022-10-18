@@ -40,10 +40,10 @@ class SimpleConcreteFactory(ConcreteFactory):
 
     def create_concrete(self) -> Concrete:
         """Creates an instance of a Concrete Base Class"""
-        
+
         if self._norm_name=='ec':
             return EcConcrete(f'C{int(self._fck)}', fck=self._fck)
         if self._norm_name=='aci':
             return AciConcrete(f'C{int(self._fck)}', fc=self._fck)
-        
+
         raise ValueError(f'Norm name {self._norm_name} is not valid')

@@ -28,7 +28,7 @@ class EcConcrete(Concrete):
         ValueError
             if national_code does not exist
         """
-        
+
         if density < 0:
             raise ValueError(f'Density cannot be less than zero. Current {density}')
         if fck < 0:
@@ -43,7 +43,7 @@ class EcConcrete(Concrete):
         EN 1992-1.2:2004 Table 3.1
         Returns the concrete modulus of elasticity at 28 days in MPa
         """
-        return self._eurocode.Ecm(self.fck)
+        return self._eurocode.Ecm(self._fck)
 
     def fck(self) -> float:
         """

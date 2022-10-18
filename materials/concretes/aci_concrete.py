@@ -59,4 +59,4 @@ class AciConcrete(Concrete):
         ACI 318-19 19.2.1
         Returns the concrete compressive strength fc' in MPa
         """
-        return self.fc
+        return self._fc

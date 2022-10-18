@@ -1,7 +1,7 @@
 import unittest
 from structural_standards.concrete.eurocode import Eurocode_1992_2
 
-class TestEurocodeConcrete(unittest.TestCase):
+class Test_Eurocode_1992_2(unittest.TestCase):
     
     def setUp(self) -> None:
         self.eurocode = Eurocode_1992_2()

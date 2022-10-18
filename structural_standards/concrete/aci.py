@@ -1,4 +1,3 @@
-import re
 import numpy as np
 from structural_standards.structural_standard import StructuralStandard
 
@@ -55,7 +54,7 @@ class Aci_318_19(StructuralStandard):
             if fc is less than zero or lambda is not between 0 and 1 (both included)
         """
         if fc < 0:
-            raise ValueError(f'Compressive strnegth of concrete cannot be less than zero. Current: {fc}')
+            raise ValueError(f'Compressive strength of concrete cannot be less than zero. Current: {fc}')
         if l_fr < 0 or l_fr > 1:
             raise ValueError(f'l_fr (lambda) cannot be less than zero or greater than one. Current: {l_fr}')
 

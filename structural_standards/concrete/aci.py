@@ -79,12 +79,12 @@ class Aci_318_19(StructuralStandard):
         """
         if wc < 0:
             raise ValueError(f'Concrete density wc cannot be less than zero. Current: {wc}')
-        elif wc <= 1600:
+        if wc <= 1600:
             return 0.75
-        elif wc <= 2160:
+        if wc <= 2160:
             return np.min(0.0075*wc,1)
-        else:
-            return 1
+        
+        return 1
 
     def l_fr_b(self, concrete: str, composition_aggregates: str) -> float:
         """
@@ -119,5 +119,5 @@ class Aci_318_19(StructuralStandard):
             return 0.85
         if concrete not in ('sand-lightweight', 'coarse blend'):
             return 0.85 if composition_aggregates == 'fine' else 1
-        else:
-            raise ValueError(f'No value found for concrete value {concrete}')
+        
+        raise ValueError(f'No value found for concrete value {concrete}')

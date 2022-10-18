@@ -4,7 +4,7 @@ from structural_standards.concrete.aci import Aci_318_19
 class AciConcrete(Concrete):
     """ACI Standard Concrete Material Class"""
 
-    def __init__(self, name: str, fc: float, wc:2286.04):
+    def __init__(self, name: str, fc: float, wc=2286.04):
         """
         Inicializes a new instance of ACI Standard concrete material
 

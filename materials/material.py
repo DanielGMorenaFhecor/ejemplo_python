@@ -6,7 +6,7 @@ class Material(ABC):
     def __init__(self, name: str, density: float):
         """
         Initializes an instance of a new material
-        
+
         Parameters
         ----------
         name : str
@@ -22,7 +22,7 @@ class Material(ABC):
 
         if density < 0:
             raise ValueError(f'Density cannot be less than zero. Current {density}')
-            
+
         self._name = name
         self._density=density
 

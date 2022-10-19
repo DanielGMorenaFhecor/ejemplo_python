@@ -32,9 +32,8 @@ class Eurocode_1992_2(StructuralStandard):
             raise ValueError(f'{national_code} is not a valid national code')
 
         self.national_code = national_code
-
+        
 # Chapter 1-1: General rules and rules for buildings
-
 # Section 3: Materials
 
     def beta_cc(self, t: float, s: float) -> float:

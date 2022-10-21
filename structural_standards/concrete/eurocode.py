@@ -2,7 +2,7 @@ import numpy as np
 from structural_standards.structural_standard import StructuralStandard
 
 class Eurocode_1992_2(StructuralStandard):
-    """Eurocode 2: Design of concrete structures. Release date: 2013"""
+    """Eurocode 2: Design of concrete structures. Release date: 2004"""
 
     @staticmethod
     def __get_valid_national_codes() -> tuple:
@@ -25,7 +25,7 @@ class Eurocode_1992_2(StructuralStandard):
         ValueError
             if input national code value is not valid or does not exist
         """
-        super().__init__(name='EN 1992-2', release_year=2013, materials=('Concrete'))
+        super().__init__(name='EN 1992-2', release_year=2004, materials=('Concrete'))
 
         valid_national_codes = Eurocode_1992_2.__get_valid_national_codes()
         if national_code not in valid_national_codes:

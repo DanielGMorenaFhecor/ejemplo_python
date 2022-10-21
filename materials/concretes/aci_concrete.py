@@ -32,12 +32,15 @@ class AciConcrete(Concrete):
         self._fc = fc
         self._aci = Aci_318_19()
 
-    def Ecm(self) -> float:
+    # ACI Concrete
+    @property
+    def fc(self) -> float:
         """
-        ACI 318-19 19.2.2
-        Returns the concrete modulus of elasticity in MPa
+        ACI 318-19 19.2.1
+        Returns the concrete compressive strength fc' in MPa
         """
-        return self.Ec()
+        return self._fc
+
 
     def Ec(self) -> float:
         """
@@ -46,17 +49,18 @@ class AciConcrete(Concrete):
         """
         return self._aci.Ec(self._fc, wc=self.density)
 
+
+    # General Concrete Implementation
+    def Ecm(self) -> float:
+        """
+        ACI 318-19 19.2.2
+        Returns the concrete modulus of elasticity in MPa
+        """
+        return self.Ec()
+
     def fck(self) -> float:
         """
         ACI 318-19 19.2.1
         Returns the concrete compressive strength fc' in MPa
         """
         return self.fc
-
-    @property
-    def fc(self) -> float:
-        """
-        ACI 318-19 19.2.1
-        Returns the concrete compressive strength fc' in MPa
-        """
-        return self._fc
